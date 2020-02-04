@@ -1,3 +1,6 @@
 {
-   "name": "basic/basic"
+   "name": "basic/basic",
+   "require": {
+      "catfan/medoo": "1.7.*"
+   }
 }
