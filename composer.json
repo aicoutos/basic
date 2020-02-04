@@ -1,6 +1,12 @@
 {
-   "name": "basic/basic",
-   "require": {
-      "catfan/medoo": "1.7.*"
-   }
+    "name": "basic/basic",
+    "require": {
+        "catfan/medoo": "1.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Basic\\": "basic/"
+        }
+    }
 }
