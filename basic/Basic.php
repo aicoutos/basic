@@ -1,6 +1,12 @@
 <?php
 namespace Basic;
+use Basic\Routing;
 class Basic{
+    function autoRouting(
+        $bool=true
+    ){
+        return new Routing($bool);
+    }
     function error(
         $showErrors=true
     ){
@@ -53,31 +59,6 @@ class Basic{
                 return false;
             }
         }
-    }
-    function run(){
-        //identificar o método
-        switch($this->getMethod()){
-            case 'GET':
-            $method=1;
-            break;
-            case 'POST':
-            $method=2;
-            break;
-            case 'PUT':
-            case 'PATCH':
-            $method=3;
-            break;
-            case 'DELETE':
-            $method=4;
-            break;
-            default:
-            $method=0;
-        }
-        print $method.'<br>';
-        //indentificar o tipo de uri
-        $uri=$this->getUri();
-        var_dump($uri);
-        //identifica a ação
     }
 }
 ?>
