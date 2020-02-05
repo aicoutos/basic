@@ -2,6 +2,7 @@
 namespace Basic;
 use Basic\Basic;
 class Routing extends Basic{
+    var $action;
     var $methodCode;
     var $tupleCode;
     var $uriCode;
@@ -26,8 +27,14 @@ class Routing extends Basic{
         //setar a tupla
         $tupleCode=$this->getMethodCode().$this->getUriCode();
         $this->setTupleCode($tupleCode);
-        print $this->getTupleCode().'<br>';    
+        print $this->getTupleCode().'<br>';
         //setar a ação
+        $action=$this->convertTupleCodeToAction($this->getTupleCode());
+        $this->setAction($action);
+        print $this->getAction().'<br>';
+    }
+    function getAction(){
+        return $this->action;
     }
     function getMethodCode(){
         return $this->methodCode;
@@ -58,6 +65,33 @@ class Routing extends Basic{
         }
         return $methodCode;
     }
+    function convertTupleCodeToAction($int){
+        switch($int){
+            case 11:
+            return 'index';
+            break;
+            case 12:
+            return 'create';
+            break;
+            case 13:
+            return 'show';
+            break;
+            case 14:
+            return 'edit';
+            break;
+            case 21:
+            return 'store';
+            break;
+            case 32:
+            return 'update';
+            break;
+            case 42:
+            return 'destroy';
+            break;
+            default:
+            return false;
+        }
+    }
     function convertUriToUriCode($arr){
         $count=count($arr);
         if($count==1){
@@ -83,6 +117,9 @@ class Routing extends Basic{
     }
     function manual(){
         print 'roteamento manual<br>';
+    }
+    function setAction($str){
+        $this->action=$str;
     }
     function setMethodCode($int){
         $this->methodCode=$int;
