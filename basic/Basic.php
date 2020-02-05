@@ -2,30 +2,13 @@
 namespace Basic;
 use Basic\Routing;
 class Basic{
-    var $uri;
     function autoRouting(
         $bool=true
     ){
         if($bool){
-            $uri=$this->convertHttpToUri(@$_SERVER["REQUEST_URI"]);
-            $this->setUri($uri);
             new Routing(true);
         }else{
             new Routing(false);
-        }
-    }
-    function convertHttpToUri($str){
-        $str=@explode('?',$str)[0];
-        $arr=explode('/',$str);
-        $arr=array_filter($arr);
-        $arr=array_values($arr);
-        if(count($arr)<1){
-            $segment[1]='/';
-        }else{
-            $i=1;
-            foreach ($arr as $key => $value) {
-                $segment[$i++]=$value;
-            }
         }
     }
     function error(
@@ -55,21 +38,31 @@ class Basic{
     function getMethod(){
         return @$_SERVER['REQUEST_METHOD'];
     }
-    function getUri(
+    function segment(
         $segmentId=null
     ){
-        if(is_null($segmentId)){
-            return $this->uri;
+        $str=$_SERVER["REQUEST_URI"];
+        $str=@explode('?',$str)[0];
+        $arr=explode('/',$str);
+        $arr=array_filter($arr);
+        $arr=array_values($arr);
+        if(count($arr)<1){
+            $segment[1]='/';
         }else{
-            if(isset($this->uri[$segmentId])){
-                return $this->uri[$segmentId];
+            $i=1;
+            foreach ($arr as $key => $value) {
+                $segment[$i++]=$value;
+            }
+        }
+        if(is_null($segmentId)){
+            return $segment;
+        }else{
+            if(isset($segment[$segmentId])){
+                return $segment[$segmentId];
             }else{
                 return false;
             }
         }
-    }
-    function setUri($arr){
-        $this->uri=$arr;
     }
 }
 ?>

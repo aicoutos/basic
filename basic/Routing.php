@@ -17,11 +17,12 @@ class Routing extends Basic{
         $method=parent::getMethod();
         $methodCode=$this->convertMethodToMethodCode($method);
         $this->setMethodCode($methodCode);
-        print $this->getMethodCode();
+        print $this->getMethodCode().'<br>';
         //setar a uri
-        // $uri=parent::getUri();
-        // $uriCode=$this->convertUriToUriCode($uri);
-        // $this->setUriCode($uriCode);
+        $uri=parent::segment();
+        $uriCode=$this->convertUriToUriCode($uri);
+        $this->setUriCode($uriCode);
+        print $this->getUriCode().'<br>';
         //setar a tupla
         //setar a ação
     }
@@ -55,7 +56,27 @@ class Routing extends Basic{
         return $methodCode;
     }
     function convertUriToUriCode($arr){
-
+        $count=count($arr);
+        if($count==1){
+            // 1   simples (ex: /, /photos)
+            $uriCode=1;
+        }elseif($count==2){
+            if(is_numeric($arr[2])){
+                // 3   com id (ex:/photos/1)
+                $uriCode=3;
+            }elseif($arr[2]=='create'){
+                // 2   com ação (ex:/photos/create)
+                $uriCode=2;
+            }else{
+                $uriCode=0;
+            }
+        }elseif($count==3){
+            // 4   com id e ação (ex:/photos/1/edit)
+            $uriCode=4;
+        }else{
+            $uriCode=0;
+        }
+        return $uriCode;
     }
     function manual(){
         print 'roteamento manual<br>';
