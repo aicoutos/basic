@@ -3,6 +3,7 @@ namespace Basic;
 use Basic\Basic;
 class Routing extends Basic{
     var $action;
+    var $controllerName;
     var $methodCode;
     var $tupleCode;
     var $uriCode;
@@ -18,23 +19,31 @@ class Routing extends Basic{
         $method=parent::getMethod();
         $methodCode=$this->convertMethodToMethodCode($method);
         $this->setMethodCode($methodCode);
-        print $this->getMethodCode().'<br>';
         //setar a uri
         $uri=parent::segment();
         $uriCode=$this->convertUriToUriCode($uri);
         $this->setUriCode($uriCode);
-        print $this->getUriCode().'<br>';
         //setar a tupla
         $tupleCode=$this->getMethodCode().$this->getUriCode();
         $this->setTupleCode($tupleCode);
-        print $this->getTupleCode().'<br>';
         //setar a ação
         $action=$this->convertTupleCodeToAction($this->getTupleCode());
         $this->setAction($action);
-        print $this->getAction().'<br>';
+        if($this->getAction()){
+            //controller
+            parent::controller(
+                $this->getControllerName().'@'.$this->getAction()
+            );
+        }else{
+            //ação desconhecida
+            die('invalid request');
+        };
     }
     function getAction(){
         return $this->action;
+    }
+    function getControllerName(){
+        return $this->controllerName;
     }
     function getMethodCode(){
         return $this->methodCode;
@@ -97,6 +106,13 @@ class Routing extends Basic{
         if($count==1){
             // 1   simples (ex: /, /photos)
             $uriCode=1;
+            if($arr[1]=='/'){
+                $controllerName='Index';
+            }else{
+                $controllerName=mb_ucfirst($arr[1]);
+            }
+            $controllerName=$controllerName.'Controller';
+            $this->setControllerName($controllerName);
         }elseif($count==2){
             if(is_numeric($arr[2])){
                 // 3   com id (ex:/photos/1)
@@ -120,6 +136,9 @@ class Routing extends Basic{
     }
     function setAction($str){
         $this->action=$str;
+    }
+    function setControllerName($str){
+        $this->controllerName=$str;
     }
     function setMethodCode($int){
         $this->methodCode=$int;

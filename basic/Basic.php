@@ -2,6 +2,7 @@
 namespace Basic;
 use Basic\Routing;
 class Basic{
+    var $autoRouting;
     function autoRouting(
         $bool=true
     ){
@@ -9,6 +10,18 @@ class Basic{
             new Routing(true);
         }else{
             new Routing(false);
+        }
+    }
+    function controller($str){
+        $arr=explode('@',$str);
+        $className=@$arr[0];
+        $actionName=@$arr[1];
+        $filename=$this->root().'app/controller/'.$className.'.php';
+        $filenameIndex=$this->root().'app/controller/IndexController.php';
+        if(file_exists($filename)){
+
+        }else{
+            die('o controller '.$className);
         }
     }
     function error(
@@ -24,6 +37,9 @@ class Basic{
             error_reporting(0);
         }
     }
+    function getAutoRouting(){
+        return $this->autoRouting;
+    }
     function getInputVars(){
         $pairs = explode("&", file_get_contents("php://input"));
         $vars = array();
@@ -37,6 +53,15 @@ class Basic{
     }
     function getMethod(){
         return @$_SERVER['REQUEST_METHOD'];
+    }
+    function root(){
+        $str=getcwd();
+        $arr=explode('/',$str);
+        end($arr);
+        $key=key($arr);
+        unset($arr[$key]);
+        $str=implode('/',$arr).'/';
+        return $str;
     }
     function segment(
         $segmentId=null
@@ -63,6 +88,9 @@ class Basic{
                 return false;
             }
         }
+    }
+    function setAutoRouting($bool){
+        $this->autoRouting=$bool;
     }
 }
 ?>
