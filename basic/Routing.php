@@ -24,6 +24,9 @@ class Routing extends Basic{
         $this->setUriCode($uriCode);
         print $this->getUriCode().'<br>';
         //setar a tupla
+        $tupleCode=$this->getMethodCode().$this->getUriCode();
+        $this->setTupleCode($tupleCode);
+        print $this->getTupleCode().'<br>';    
         //setar a ação
     }
     function getMethodCode(){
