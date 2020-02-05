@@ -2,62 +2,72 @@
 namespace Basic;
 use Basic\Basic;
 class Routing extends Basic{
-    var $method;
-    var $tuple;
-    var $uri;
+    var $methodCode;
+    var $tupleCode;
+    var $uriCode;
     function __construct($bool){
         if($bool){
-            return $this->auto();
+            $this->auto();
         }else{
-            return $this->manual();
+            $this->manual();
         }
     }
     function auto(){
-        //identificar o método
-        switch($this->getMethod()){
+        //setar o método
+        $method=parent::getMethod();
+        $methodCode=$this->convertMethodToMethodCode($method);
+        $this->setMethodCode($methodCode);
+        print $this->getMethodCode();
+        //setar a uri
+        // $uri=parent::getUri();
+        // $uriCode=$this->convertUriToUriCode($uri);
+        // $this->setUriCode($uriCode);
+        //setar a tupla
+        //setar a ação
+    }
+    function getMethodCode(){
+        return $this->methodCode;
+    }
+    function getTupleCode(){
+        return $this->tupleCode;
+    }
+    function getUriCode(){
+        return $this->uriCode;
+    }
+    function convertMethodToMethodCode($str){
+        switch($str){
             case 'GET':
-            $method=1;
+            $methodCode=1;
             break;
             case 'POST':
-            $method=2;
+            $methodCode=2;
             break;
             case 'PUT':
             case 'PATCH':
-            $method=3;
+            $methodCode=3;
             break;
             case 'DELETE':
-            $method=4;
+            $methodCode=4;
             break;
             default:
-            $method=0;
+            $methodCode=0;
         }
+        return $methodCode;
+    }
+    function convertUriToUriCode($arr){
 
-        print $method.'<br>';
-        //indentificar o tipo de uri
-        $uri=$this->getUri();
-        var_dump($uri);
-        //identifica a ação
-    }
-    function getMethod(){
-        return $this->method;
-    }
-    function getTuple(){
-        return $this->tuple;
-    }
-    function getUri(){
-        return $this->uri;
     }
     function manual(){
         print 'roteamento manual<br>';
     }
-    function setMethod($int){
-        $this->method=$int;
+    function setMethodCode($int){
+        $this->methodCode=$int;
     }
-    function setTuple($int){
-        $this->tuple=$int;
+    function setTupleCode($int){
+        $this->tupleCode=$int;
     }
-    function setUri($int){
-        $this->uri=$int;
+    function setUriCode($int){
+        $this->uriCode=$int;
     }
 }
 ?>
