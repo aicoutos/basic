@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
-use Basic\Basic;
-class IndexController extends Basic{
+use Basic\Controller;
+class IndexController extends Controller{
     function index(){
         $data=[
             'title'=>'hello world'

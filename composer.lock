@@ -4,8 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff648721371d55857eeea6b6525edf69",
+    "content-hash": "032ec02252fb22f1fa523556b4da6ff0",
     "packages": [
+        {
+            "name": "basic/kernel",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:aicoutos/kernel.git",
+                "reference": "f864b1965a69f04da70080ad7ca72e2cc5ceef23"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Basic\\": "src/"
+                }
+            },
+            "time": "2020-02-06T12:54:29+00:00"
+        },
         {
             "name": "catfan/medoo",
             "version": "v1.7.9",
