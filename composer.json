@@ -1,7 +1,18 @@
 {
     "name": "basic/basic",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:bobthecow/mustache.php.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:catfan/Medoo.git"
+        }
+    ],
     "require": {
-        "catfan/medoo": "1.7.*"
+        "catfan/medoo": "1.7.*",
+        "mustache/mustache": "2.13.*"
     },
     "autoload": {
         "psr-4": {

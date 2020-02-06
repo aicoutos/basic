@@ -4,21 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "758495b1fa4c22bbec62c273667ccd3f",
+    "content-hash": "ff648721371d55857eeea6b6525edf69",
     "packages": [
         {
             "name": "catfan/medoo",
-            "version": "v1.7.8",
+            "version": "v1.7.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/catfan/Medoo.git",
-                "reference": "dd9d570584cfb1e09ec470608479b86e41d5b60d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/catfan/Medoo/zipball/dd9d570584cfb1e09ec470608479b86e41d5b60d",
-                "reference": "dd9d570584cfb1e09ec470608479b86e41d5b60d",
-                "shasum": ""
+                "url": "git@github.com:catfan/Medoo.git",
+                "reference": "72f7dae2284ca8c060961c4d1304320ac535c337"
             },
             "require": {
                 "ext-pdo": "*",
@@ -39,7 +33,6 @@
                     "Medoo\\": "/src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -52,19 +45,62 @@
             "description": "The lightweight PHP database framework to accelerate development",
             "homepage": "https://medoo.in",
             "keywords": [
+                "MSSQL",
+                "MariaDB",
+                "MySQL",
+                "Oracle",
+                "PHP framework",
+                "PostgreSQL",
+                "SQL",
+                "SQLite",
                 "database",
                 "database library",
-                "lightweight",
-                "mariadb",
-                "mssql",
-                "mysql",
-                "oracle",
-                "php framework",
-                "postgresql",
-                "sql",
-                "sqlite"
+                "lightweight"
             ],
-            "time": "2019-12-19T05:04:34+00:00"
+            "support": {
+                "issues": "https://github.com/catfan/Medoo/issues",
+                "source": "https://github.com/catfan/Medoo"
+            },
+            "time": "2020-02-06T05:53:36+00:00"
+        },
+        {
+            "name": "mustache/mustache",
+            "version": "v2.13.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:bobthecow/mustache.php.git",
+                "reference": "e95c5a008c23d3151d59ea72484d4f72049ab7f4"
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~1.11",
+                "phpunit/phpunit": "~3.7|~4.0|~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mustache": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Hileman",
+                    "email": "justin@justinhileman.info",
+                    "homepage": "http://justinhileman.com"
+                }
+            ],
+            "description": "A Mustache implementation in PHP.",
+            "homepage": "https://github.com/bobthecow/mustache.php",
+            "keywords": [
+                "mustache",
+                "templating"
+            ],
+            "time": "2019-11-23T21:40:31+00:00"
         }
     ],
     "packages-dev": [],

@@ -11,7 +11,9 @@ class Basic{
             new Routing(false);
         }
     }
-    function controller($str){
+    function controller(
+        $str
+    ){
         $arr=explode('@',$str);
         $className=@$arr[0];
         $methodName=@$arr[1];
@@ -110,6 +112,20 @@ class Basic{
                 return false;
             }
         }
+    }
+    function view(
+        $name,
+        $data=false
+    ){
+        $m = new \Mustache_Engine;
+        $filename=$this->root().'app/view/'.$name.'.mustache';
+        if(file_exists($filename)){
+            $template=file_get_contents($filename);
+            return $m->render($template, $data);
+        }else{
+            die('a view '.$this->e($name,false).'.mustache não existe');
+        }
+
     }
 }
 ?>
