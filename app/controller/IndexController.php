@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
-use Basic\Controller;
-class IndexController extends Controller{
+use Basic\Basic;
+class IndexController extends Basic{
     function index(){
         print 'hello world';
         // $dataArr=[

@@ -2,7 +2,6 @@
 namespace Basic;
 use Basic\Routing;
 class Basic{
-    var $autoRouting;
     function autoRouting(
         $bool=true
     ){
@@ -15,13 +14,39 @@ class Basic{
     function controller($str){
         $arr=explode('@',$str);
         $className=@$arr[0];
-        $actionName=@$arr[1];
+        $methodName=@$arr[1];
         $filename=$this->root().'app/controller/'.$className.'.php';
         $filenameIndex=$this->root().'app/controller/IndexController.php';
         if(file_exists($filename)){
-
+            require_once $filename;
+        }elseif(file_exists($filenameIndex)){
+            require_once $filenameIndex;
         }else{
-            die('o controller '.$className);
+            die('o arquivo '.$className.'.php não existe');
+        }
+        $classNameWithNamespace='App\Controller\\'.$className;
+        if(class_exists($classNameWithNamespace)){
+            if(method_exists($classNameWithNamespace,$methodName)){
+                $Controller=new $classNameWithNamespace();
+                $Controller->$methodName();
+            }else{
+                $className=$this->e($className,false);
+                $methodName=$this->e($methodName,false);
+                die('o método '.$methodName.' não existe em '.$className);
+            }
+        }else{
+            $className=$this->e($className,false);
+            die('a classe '.$className.' não existe');
+        }
+    }
+    function e(
+        $str=null,
+        $print=true
+    ){
+        if($print){
+            print htmlentities($str);
+        }else{
+            return htmlentities($str);
         }
     }
     function error(
@@ -36,9 +61,6 @@ class Basic{
             ini_set('display_startup_errors', 0);
             error_reporting(0);
         }
-    }
-    function getAutoRouting(){
-        return $this->autoRouting;
     }
     function getInputVars(){
         $pairs = explode("&", file_get_contents("php://input"));
@@ -88,9 +110,6 @@ class Basic{
                 return false;
             }
         }
-    }
-    function setAutoRouting($bool){
-        $this->autoRouting=$bool;
     }
 }
 ?>
