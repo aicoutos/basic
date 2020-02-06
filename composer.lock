@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8aaf6a5dcc928bd1b8a12ae18fe0c464",
+    "content-hash": "560738420b8778e46aadb3379afdc204",
     "packages": [
         {
             "name": "basic/kernel",
-            "version": "0.3.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aicoutos/kernel.git",
-                "reference": "0f8c77fbfcbdce2cedf9becf385c612c07364f24"
+                "reference": "6f147c7ac935b9d02341a1a0fe67690f1b13deee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/0f8c77fbfcbdce2cedf9becf385c612c07364f24",
-                "reference": "0f8c77fbfcbdce2cedf9becf385c612c07364f24",
+                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/6f147c7ac935b9d02341a1a0fe67690f1b13deee",
+                "reference": "6f147c7ac935b9d02341a1a0fe67690f1b13deee",
                 "shasum": ""
             },
             "require": {
-                "catfan/medoo": "1.7.*",
+                "catfan/medoo": "1.7.9",
                 "klein/klein": "2.1.*",
                 "mustache/mustache": "2.13.*",
                 "vlucas/phpdotenv": "4.1.*"
@@ -33,7 +33,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2020-02-06T19:01:19+00:00"
+            "time": "2020-02-06T19:32:10+00:00"
         },
         {
             "name": "catfan/medoo",
