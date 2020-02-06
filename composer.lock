@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "560738420b8778e46aadb3379afdc204",
+    "content-hash": "9dd5aa465574306ac758692361f47cf4",
     "packages": [
         {
             "name": "basic/kernel",
-            "version": "0.4.0",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aicoutos/kernel.git",
-                "reference": "6f147c7ac935b9d02341a1a0fe67690f1b13deee"
+                "reference": "a0769a8ce4c316b61b681d96660605e26edcf9a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/6f147c7ac935b9d02341a1a0fe67690f1b13deee",
-                "reference": "6f147c7ac935b9d02341a1a0fe67690f1b13deee",
+                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/a0769a8ce4c316b61b681d96660605e26edcf9a4",
+                "reference": "a0769a8ce4c316b61b681d96660605e26edcf9a4",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +33,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2020-02-06T19:32:10+00:00"
+            "time": "2020-02-06T19:41:11+00:00"
         },
         {
             "name": "catfan/medoo",
