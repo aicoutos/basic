@@ -4,23 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dd5aa465574306ac758692361f47cf4",
+    "content-hash": "ca69005f6256f3029c39dab206b18d8c",
     "packages": [
         {
             "name": "basic/kernel",
-            "version": "0.5.0",
+            "version": "v0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aicoutos/kernel.git",
-                "reference": "a0769a8ce4c316b61b681d96660605e26edcf9a4"
+                "reference": "a7de2761a0b6af8cf64fd2fd978ea8b6c6cd3ba1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/a0769a8ce4c316b61b681d96660605e26edcf9a4",
-                "reference": "a0769a8ce4c316b61b681d96660605e26edcf9a4",
+                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/a7de2761a0b6af8cf64fd2fd978ea8b6c6cd3ba1",
+                "reference": "a7de2761a0b6af8cf64fd2fd978ea8b6c6cd3ba1",
                 "shasum": ""
             },
             "require": {
+                "basic/migrate": "v0.1.1",
                 "catfan/medoo": "1.7.9",
                 "klein/klein": "2.1.*",
                 "mustache/mustache": "2.13.*",
@@ -33,7 +34,33 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2020-02-06T19:41:11+00:00"
+            "time": "2020-02-10T19:34:18+00:00"
+        },
+        {
+            "name": "basic/migrate",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aicoutos/migrate.git",
+                "reference": "2a01f6563a826e2fc2224dc38de85290bb29f9ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aicoutos/migrate/zipball/2a01f6563a826e2fc2224dc38de85290bb29f9ad",
+                "reference": "2a01f6563a826e2fc2224dc38de85290bb29f9ad",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Basic\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-02-10T19:28:53+00:00"
         },
         {
             "name": "catfan/medoo",
