@@ -1,8 +1,9 @@
 {
     "name": "basic/basic",
     "require": {
-        "basic/kernel": "v0.6.0"
+        "basic/kernel": "v1.0.0"
     },
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "App\\": "app/"

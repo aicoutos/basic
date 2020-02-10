@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca69005f6256f3029c39dab206b18d8c",
+    "content-hash": "6a88926767c403768d3aabb654439c03",
     "packages": [
         {
             "name": "basic/kernel",
-            "version": "v0.6.0",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aicoutos/kernel.git",
-                "reference": "a7de2761a0b6af8cf64fd2fd978ea8b6c6cd3ba1"
+                "reference": "ee79bedfc079ce54eaae6aba05ba772f1aeafb1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/a7de2761a0b6af8cf64fd2fd978ea8b6c6cd3ba1",
-                "reference": "a7de2761a0b6af8cf64fd2fd978ea8b6c6cd3ba1",
+                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/ee79bedfc079ce54eaae6aba05ba772f1aeafb1a",
+                "reference": "ee79bedfc079ce54eaae6aba05ba772f1aeafb1a",
                 "shasum": ""
             },
             "require": {
-                "basic/migrate": "v0.1.1",
+                "basic/migrate": "v1.0.0",
                 "catfan/medoo": "1.7.9",
                 "klein/klein": "2.1.*",
                 "mustache/mustache": "2.13.*",
@@ -34,20 +34,23 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2020-02-10T19:34:18+00:00"
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-02-10T19:45:00+00:00"
         },
         {
             "name": "basic/migrate",
-            "version": "v0.1.1",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aicoutos/migrate.git",
-                "reference": "2a01f6563a826e2fc2224dc38de85290bb29f9ad"
+                "reference": "1bc9eacf2f71592372e46dc8f372d763d1e06e55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aicoutos/migrate/zipball/2a01f6563a826e2fc2224dc38de85290bb29f9ad",
-                "reference": "2a01f6563a826e2fc2224dc38de85290bb29f9ad",
+                "url": "https://api.github.com/repos/aicoutos/migrate/zipball/1bc9eacf2f71592372e46dc8f372d763d1e06e55",
+                "reference": "1bc9eacf2f71592372e46dc8f372d763d1e06e55",
                 "shasum": ""
             },
             "type": "library",
@@ -60,7 +63,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-02-10T19:28:53+00:00"
+            "time": "2020-02-10T19:40:45+00:00"
         },
         {
             "name": "catfan/medoo",
