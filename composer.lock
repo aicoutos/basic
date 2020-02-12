@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a88926767c403768d3aabb654439c03",
+    "content-hash": "1f57f0453785e8e9b3a1292ca69ef834",
     "packages": [
         {
             "name": "basic/kernel",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aicoutos/kernel.git",
-                "reference": "ee79bedfc079ce54eaae6aba05ba772f1aeafb1a"
+                "reference": "5b9f66c5dd946671bad4f3d75bfc4ae19b740bf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/ee79bedfc079ce54eaae6aba05ba772f1aeafb1a",
-                "reference": "ee79bedfc079ce54eaae6aba05ba772f1aeafb1a",
+                "url": "https://api.github.com/repos/aicoutos/kernel/zipball/5b9f66c5dd946671bad4f3d75bfc4ae19b740bf8",
+                "reference": "5b9f66c5dd946671bad4f3d75bfc4ae19b740bf8",
                 "shasum": ""
             },
             "require": {
@@ -37,7 +37,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-02-10T19:45:00+00:00"
+            "time": "2020-02-12T12:12:55+00:00"
         },
         {
             "name": "basic/migrate",

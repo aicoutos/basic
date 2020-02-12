@@ -1,7 +1,7 @@
 {
     "name": "basic/basic",
     "require": {
-        "basic/kernel": "v1.0.0"
+        "basic/kernel": "v1.1.0"
     },
     "license": "MIT",
     "autoload": {
